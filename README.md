@@ -1,12 +1,8 @@
 # Senior-Project
-William Tsai
+## William Tsai
 
-4th Year CS Major
+### 4th Year CS Major
 
-Cal Poly SLO
+### Cal Poly SLO
 
-For my senior project
-
-I will create a fantasy game based on Zelda 
-
-Note: Inspired by ClearCode tutorial
+<p>For my senior project, I will create a fantasy game based on Zelda.<br>Note: This project was heavily inspired by a ClearCode tutorial on YouTube.</p>
