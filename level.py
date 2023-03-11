@@ -22,7 +22,7 @@ class Level:
         layouts = {
             'boundary': import_csv_layout('/Users/basedatlas/Desktop/SeniorProject/Senior-Project/map/map_FloorBlocks.csv'),
             'grass': import_csv_layout('/Users/basedatlas/Desktop/SeniorProject/Senior-Project/map/map_Grass.csv'),
-            'object': import_csv_layout('/Users/basedatlas/Desktop/SeniorProject/Senior-Project/map/map_LargeObjects.csv')
+            'object': import_csv_layout('/Users/basedatlas/Desktop/SeniorProject/Senior-Project/map/map_Objects.csv')
         }
         graphics = {
             'grass': import_folder('/Users/basedatlas/Desktop/SeniorProject/Senior-Project/graphics/grass')
