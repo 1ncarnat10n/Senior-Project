@@ -25,7 +25,8 @@ class Level:
             'object': import_csv_layout('/Users/basedatlas/Desktop/SeniorProject/Senior-Project/map/map_Objects.csv')
         }
         graphics = {
-            'grass': import_folder('/Users/basedatlas/Desktop/SeniorProject/Senior-Project/graphics/grass')
+            'grass': import_folder('/Users/basedatlas/Desktop/SeniorProject/Senior-Project/graphics/grass'),
+            'objects': import_folder('/Users/basedatlas/Desktop/SeniorProject/Senior-Project/graphics/objects')
         }
 
         for style, layout in layouts.items():
@@ -39,6 +40,7 @@ class Level:
                         if style == 'grass':
                             random_grass_image = choice(graphics['grass'])
                             Tile((x, y), [self.visible_sprites, self.obstacle_sprites], 'grass', random_grass_image)
+                            
                         if style == 'object':
                             # create an object file
                             pass
