@@ -5,7 +5,8 @@
 
 <p>For my senior project, I will create a fantasy game based on Zelda.<br>
 This was created in Python primarily through the use of PyGame.<br>
-Run with python3 main.py<br>
+Run in terminal with python3 main.py<br>
 Note: This project was heavily inspired by a ClearCode tutorial on YouTube.</p>
 
-<p>To play, use the arrow keys to move around.</p>
+<p>To play, use the arrow keys to move around.<br>
+Press SPACE to use weapon, and Q to switch weapons.</p>
