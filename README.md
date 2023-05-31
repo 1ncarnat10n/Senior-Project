@@ -8,6 +8,6 @@ This was created in Python primarily through the use of PyGame.<br>
 Run in terminal with python3 main.py<br>
 Note: This project was heavily inspired by a ClearCode tutorial on YouTube.</p>
 
-<p>To play, use the arrow keys to move around.<br>
+<p>To play, use the WASD keys to move around.<br>
 Press SPACE to use weapon, and Q to switch weapons.<br>
-Press Left CTRL to use magic spells, and E to switch spells.</p>
+Press R to use magic spells, and E to switch spells.</p>
