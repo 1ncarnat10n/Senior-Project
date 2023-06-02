@@ -11,3 +11,7 @@ Note: This project was heavily inspired by a ClearCode tutorial on YouTube.</p>
 <p>To play, use the WASD keys to move around.<br>
 Press SPACE to use weapon, and Q to switch weapons.<br>
 Press R to use magic spells, and E to switch spells.</p>
+
+<p>Press P to pause and open the upgrade menu.<br>
+Use the arrow keys to switch through the menu boxes.
+Press SPACE to upgrade stats for the selected menu.</p>
