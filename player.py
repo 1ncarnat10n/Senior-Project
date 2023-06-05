@@ -1,4 +1,5 @@
 import pygame
+import sys
 from settings import *
 from support import import_folder
 from entity import Entity
@@ -10,17 +11,15 @@ class Player(Entity):
         self.rect = self.image.get_rect(topleft = pos)
         self.hitbox = self.rect.inflate(-6, HITBOX_OFFSET['player'])
 
-        # graphics setup
         self.import_player_assets()
         self.status = 'down'
 
-        # movement
         self.attacking = False
         self.attack_cooldown = 400
         self.attack_time = None
+
         self.obstacle_sprites = obstacle_sprites
 
-        # weapon
         self.create_attack = create_attack
         self.destroy_attack = destroy_attack
         self.weapon_index = 0
@@ -29,14 +28,12 @@ class Player(Entity):
         self.weapon_switch_time = None
         self.switch_duration_cooldown = 200
 
-        # magic
         self.create_magic = create_magic
         self.magic_index = 0
         self.magic = list(magic_data.keys())[self.magic_index]
         self.can_switch_magic = True
         self.magic_switch_time = None
 
-        # stats
         self.stats = {'health': 100, 'energy': 60, 'attack': 10, 'magic': 4, 'speed': 5}
         self.max_stats = {'health': 300, 'energy': 140, 'attack': 20, 'magic': 10, 'speed': 10}
         self.upgrade_cost = {'health': 100, 'energy': 100, 'attack': 100, 'magic': 100, 'speed': 100}
@@ -45,12 +42,10 @@ class Player(Entity):
         self.exp = 0
         self.speed = self.stats['speed']
 
-        # damage timer
         self.vulnerable = True
         self.hurt_time = None
         self.invulnerability_duration = 500
 
-        # import a sound
         self.weapon_attack_sound = pygame.mixer.Sound('/Users/basedatlas/Desktop/SeniorProject/Senior-Project/audio/sword.wav')
         self.weapon_attack_sound.set_volume(0.4)
 
@@ -58,7 +53,8 @@ class Player(Entity):
         character_path = '/Users/basedatlas/Desktop/SeniorProject/Senior-Project/graphics/player/'
         self.animations = {'up': [], 'down': [], 'left': [], 'right': [],
 			'right_idle': [], 'left_idle': [], 'up_idle': [], 'down_idle': [],
-			'right_attack': [],'left_attack': [], 'up_attack': [], 'down_attack': []}
+			'right_attack': [],'left_attack': [], 'up_attack': [], 'down_attack': []
+        }
 
         for animation in self.animations.keys():
             full_path = character_path + animation
@@ -68,7 +64,6 @@ class Player(Entity):
         if not self.attacking:
             keys = pygame.key.get_pressed()
 
-            # movement input
             if keys[pygame.K_w]:
                 self.direction.y = -1
                 self.status = 'up'
@@ -87,14 +82,12 @@ class Player(Entity):
             else:
                 self.direction.x = 0
 
-            # attack input
             if keys[pygame.K_SPACE]:
                 self.attacking = True
                 self.attack_time = pygame.time.get_ticks()
                 self.create_attack()
                 self.weapon_attack_sound.play()
 
-            # magic input
             if keys[pygame.K_r]:
                 self.attacking = True
                 self.attack_time = pygame.time.get_ticks()
@@ -126,8 +119,6 @@ class Player(Entity):
                 self.magic = list(magic_data.keys())[self.magic_index]
 
     def get_status(self):
-        
-        # idle status
         if self.direction.x == 0 and self.direction.y == 0:
             if not 'idle' in self.status and not 'attack' in self.status:
                 self.status = self.status + '_idle'
@@ -167,16 +158,13 @@ class Player(Entity):
     def animate(self):
         animation = self.animations[self.status]
 
-        # loop over the frame index
         self.frame_index += self.animation_speed
         if self.frame_index >= len(animation):
             self.frame_index = 0
-        
-        # set the image
+
         self.image = animation[int(self.frame_index)]
         self.rect = self.image.get_rect(center = self.hitbox.center)
 
-        # flicker
         if not self.vulnerable:
             alpha = self.wave_value()
             self.image.set_alpha(alpha)
@@ -199,6 +187,10 @@ class Player(Entity):
     def get_cost_by_index(self, index):
         return list(self.upgrade_cost.values())[index]
     
+    def player_death(self):
+        if self.health <= 0:
+            sys.exit()
+
     def energy_recovery(self):
         if self.energy < self.stats['energy']:
             self.energy += 0.01 * self.stats['magic']
@@ -211,4 +203,5 @@ class Player(Entity):
         self.get_status()
         self.animate()
         self.move(self.stats['speed'])
+        self.player_death()
         self.energy_recovery()

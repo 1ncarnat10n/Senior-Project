@@ -4,16 +4,15 @@ from level import Level
 
 class Game:
     def __init__(self):
-
-        # general setup
         pygame.init()
         self.screen = pygame.display.set_mode((WIDTH, HEIGHT))
         pygame.display.set_caption('Kingdom Come')
+        pygame_icon = pygame.image.load('/Users/basedatlas/Desktop/SeniorProject/Senior-Project/graphics/test/player.png')
+        pygame.display.set_icon(pygame_icon)
         self.clock = pygame.time.Clock()
 
         self.level = Level()
 
-        # sound
         main_sound = pygame.mixer.Sound('/Users/basedatlas/Desktop/SeniorProject/Senior-Project/audio/main.ogg')
         main_sound.set_volume(0.5)
         main_sound.play(loops = -1)

@@ -14,10 +14,14 @@ Press SPACE to use weapon, and Q to switch weapons.<br>
 Press R to use magic spells, and E to switch spells.</p>
 
 <p>Press P to pause and open the upgrade menu.<br>
-Use the arrow keys to switch through the menu boxes.
+Use the arrow keys to switch through the menu boxes.<br>
 Press SPACE to upgrade stats for the selected menu.</p>
 
+<p>The goal of the game is to gather EXP points by killing enemies in<br>
+front of you using magic and weapon choices. Once your health turns to 0,<br>
+the game closes.</p>
+
 <p>Note: For code that takes in a specific file, I had to use my own directory<br>
-to access that file. Else I get a FileNotFoundError. If the game is ran by 
-someone else, then you might have to change the directory path to access 
+to access that file. Else I get a FileNotFoundError. If the game is ran by<br> 
+someone else, then you might have to change the directory path to access<br> 
 the specific image/sound files.</p>

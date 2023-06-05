@@ -1,5 +1,6 @@
 from csv import reader
 from os import walk
+from csv import reader
 import pygame
 
 def import_csv_layout(path):

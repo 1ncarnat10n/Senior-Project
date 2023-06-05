@@ -5,25 +5,21 @@ from random import choice
 class AnimationPlayer:
     def __init__(self):
         self.frames = {
-			# magic
 			'flame': import_folder('/Users/basedatlas/Desktop/SeniorProject/Senior-Project/graphics/particles/flame/frames'),
 			'aura': import_folder('/Users/basedatlas/Desktop/SeniorProject/Senior-Project/graphics/particles/aura'),
 			'heal': import_folder('/Users/basedatlas/Desktop/SeniorProject/Senior-Project/graphics/particles/heal/frames'),
 			
-			# attacks 
 			'claw': import_folder('/Users/basedatlas/Desktop/SeniorProject/Senior-Project/graphics/particles/claw'),
 			'slash': import_folder('/Users/basedatlas/Desktop/SeniorProject/Senior-Project/graphics/particles/slash'),
 			'sparkle': import_folder('/Users/basedatlas/Desktop/SeniorProject/Senior-Project/graphics/particles/sparkle'),
 			'leaf_attack': import_folder('/Users/basedatlas/Desktop/SeniorProject/Senior-Project/graphics/particles/leaf_attack'),
 			'thunder': import_folder('/Users/basedatlas/Desktop/SeniorProject/Senior-Project/graphics/particles/thunder'),
 
-			# monster deaths
 			'squid': import_folder('/Users/basedatlas/Desktop/SeniorProject/Senior-Project/graphics/particles/smoke_orange'),
 			'raccoon': import_folder('/Users/basedatlas/Desktop/SeniorProject/Senior-Project/graphics/particles/raccoon'),
 			'spirit': import_folder('/Users/basedatlas/Desktop/SeniorProject/Senior-Project/graphics/particles/nova'),
 			'bamboo': import_folder('/Users/basedatlas/Desktop/SeniorProject/Senior-Project/graphics/particles/bamboo'),
 			
-			# leafs 
 			'leaf': (
 				import_folder('/Users/basedatlas/Desktop/SeniorProject/Senior-Project/graphics/particles/leaf1'),
 				import_folder('/Users/basedatlas/Desktop/SeniorProject/Senior-Project/graphics/particles/leaf2'),
