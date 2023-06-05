@@ -5,6 +5,7 @@
 
 <p>For my senior project, I will create a fantasy game based on Zelda.<br>
 This was created in Python primarily through the use of PyGame.<br>
+Install Python and Pygame using pip install pygame.<br>
 Run in terminal with python3 main.py<br>
 Note: This project was heavily inspired by a ClearCode tutorial on YouTube.</p>
 
