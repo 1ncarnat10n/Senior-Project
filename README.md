@@ -15,3 +15,7 @@ Press R to use magic spells, and E to switch spells.</p>
 <p>Press P to pause and open the upgrade menu.<br>
 Use the arrow keys to switch through the menu boxes.
 Press SPACE to upgrade stats for the selected menu.</p>
+
+<p>Note: For code that takes in a specific file, I had to use my own directory<br>
+to access that file. If the game is ran by someone else, then you might have to
+change the directory path to access the specific image/sound files.</p>
